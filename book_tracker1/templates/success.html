@@ -1,0 +1,62 @@
+<html>
+    <head><title>success</title></head>
+    <style>
+        .header{
+            background-color:rgb(75, 74, 77);
+            color:#fff;
+            height:80px;
+        }
+        .title{
+            font-size:25px;
+           
+            font-style:oblique;
+            padding-top: 20px;
+            margin-left:5%;
+        }
+        .logout{
+            text-decoration: none;
+            position:absolute;
+            color:white;
+            left:90%;
+        }
+        .nav{
+            font-size:20px;
+            margin-left:80%;
+        }
+        .main{
+            margin-left:40%;
+            margin-top:20%;
+        }
+        .add{
+            color:white;
+            padding-right:20px;
+            text-decoration: none;
+        }
+        .delete{
+            color:white;
+            padding-right:20px;
+            text-decoration: none;
+        }
+        .update{
+            color:white;
+            padding-right:20px;
+            text-decoration: none;
+        }
+    </style>
+    <body>
+        <div class="header">
+            <div class="title">Book Tracker
+                <a type="submit" class="logout" href={{ url_for('logout') }}>logout</a>
+            </div></div>
+            <div class="nav">
+                <a class="add" href="/add">Add</a>
+                <a class="delete" href="/delete">Delete</a>
+                <a class="update" href="/update">Update</a>
+            </div>
+            <div class="main">
+                Your Books Will appear Here
+            </div>
+          
+        
+    </body>
+</html>

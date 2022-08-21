@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Password generator</title>
+    <style>
+      .header{
+        background-color:rgb(189, 158, 219);
+        color:#fff;
+        height:80px;
+    }
+    .title{
+        font-size:25px;
+        font-family: cursive;
+        font-style:oblique;
+        padding-top: 20px;
+        margin-left:5%;
+    }
+    .main_box{
+      height:400px;
+      width:600px;
+      margin-left: 350px;
+      margin-top: 200px;
+      background-color:rgb(189, 158, 219);
+    }
+    .pas_t{
+      color:white;
+      font-size:25px;
+      padding-top:20px;
+      padding-left:10px;
+    }
+    .disp_pass{
+      font-size:25px;
+      margin-top:30px;
+      margin-left:150px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="title">Password Generator</div>
+    </div>
+    <div class="main_box">
+      <p class="pas_t">choose the length of password</p>
+      <input type="text" id="pass_len" name="pass_len" style="position:absolute;left:400px"/><br /><br /><br />
+      <input type="checkbox" id="up_case" name="up_case" >
+      <label for="up_case" style="color:#fff;font-size:20px;">UpperCase letters</label><br />
+      <input type="checkbox" id="l_case" name="l_case">
+      <label for="l_case" style="color:#fff;font-size:20px;"> LowerCase letters</label><br />
+      <input type="checkbox" id="sp_char" name="sp_char">
+      <label for="sp_char" style="color:#fff;font-size:20px;"> Special characters and Numbers</label><br /><br />
+      <button type="submit" style="margin-left:250px;" onclick="generate()">Generate Password</button>
+      <div id="disp_pass" class="disp_pass" style="color:white"></div>
+    </div>
+    <script>
+      function generate() {
+        let up_char=[]
+        for(let i=65;i<=90;i++){
+          up_char.push(String.fromCharCode(i))
+        }
+        l_char=[]
+        for(let i=97;i<=122;i++){
+          l_char.push(String.fromCharCode(i))
+        }
+        sp_char=[]
+        for(let i=33;i<=38;i++){
+          sp_char.push(String.fromCharCode(i))
+        }
+        for(let i=48;i<=57;i++){
+          sp_char.push(String.fromCharCode(i))
+        }
+        pass_str=""
+        let pass_len=document.getElementById('pass_len').value
+        if(document.getElementById('up_case').checked){
+          if(document.getElementById('l_case').checked){
+            if(document.getElementById('sp_char').checked){
+              var arr=up_char.concat(l_char,sp_char)
+              while (pass_str.length!=pass_len){
+                const rand = arr[Math.floor(Math.random() * arr.length)];
+                pass_str+=rand
+              }
+              document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+              return 
+            }
+            var arr=up_char.concat(l_char)
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+          }
+          if(document.getElementById('sp_char').checked){
+            var arr=up_char.concat(sp_char)
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return 
+          }
+          var arr=up_char
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+        }
+        if(document.getElementById('l_case').checked){
+          if(document.getElementById('up_case').checked){
+            if(document.getElementById('sp_char').checked){
+              var arr=up_char.concat(l_char,sp_char)
+              while (pass_str.length!=pass_len){
+                const rand = arr[Math.floor(Math.random() * arr.length)];
+                pass_str+=rand
+              }
+              document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+              return 
+            }
+            var arr=up_char.concat(l_char)
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+          }
+          var arr=l_char
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+        }
+        if(document.getElementById('sp_char').checked){
+          if(document.getElementById('l_case').checked){
+            if(document.getElementById('up_case').checked){
+              var arr=up_char.concat(l_char,sp_char)
+              while (pass_str.length!=pass_len){
+                const rand = arr[Math.floor(Math.random() * arr.length)];
+                pass_str+=rand
+              }
+              document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+              return 
+            }
+            var arr=sp_char.concat(l_char)
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+          }
+          var arr=sp_char
+            while (pass_str.length!=pass_len){
+              const rand = arr[Math.floor(Math.random() * arr.length)];
+              pass_str+=rand
+            }
+            document.getElementById('disp_pass').innerText = "Your Generated Password is "+pass_str;
+            return
+        }
+        alert(document.getElementById('up_case').checked);
+        alert(pass_len)
+      }
+      
+    </script>
+  </body>
+</html>

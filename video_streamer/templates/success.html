@@ -1,0 +1,55 @@
+<html>
+    <head><title>success</title></head>
+    <style>
+        .header{
+            background-color:rgb(75, 74, 77);
+            color:#fff;
+            height:80px;
+        }
+        .title{
+            font-size:25px;
+           
+            font-style:oblique;
+            padding-top: 20px;
+            margin-left:5%;
+        }
+        .logout{
+            text-decoration: none;
+            position:absolute;
+            color:white;
+            left:90%;
+        }
+        .nav{
+            font-size:20px;
+            margin-left:90%;
+        }
+        .main{
+            margin-left:40%;
+            margin-top:20%;
+        }
+        .add{
+            color:white;
+            padding-right:20px;
+            text-decoration: none;
+        }
+      
+    </style>
+    <body>
+        <div class="header">
+            <div class="title">StreamVideo
+                <a type="submit" class="logout" href={{ url_for('logout') }}>logout</a>
+            </div></div>
+            <div class="nav">
+                <a class="add" href="/add">Upload</a>
+            </div>
+            <div class="main">
+              <video width="400" controls>
+                <source src="pexels-taryn-elliott-5220279.mp4" type="video/mp4">
+                
+                Your browser does not support HTML video.
+              </video>
+            </div>
+          
+        
+    </body>
+</html>
